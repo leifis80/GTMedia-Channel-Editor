@@ -1,76 +1,38 @@
 # GTMedia Channel Editor
 
-GTMedia Channel Editor is a free utility for viewing, editing and organizing
-satellite channel lists exported from GTMedia receivers in XML format.
+GTMedia Channel Editor is a free, independent Windows utility for viewing and editing GTMedia XML channel-list exports. The first public beta is **v0.4.0-beta.3**.
 
-The program was originally developed for the GTMedia GTX Combo series and is
-currently tested with channel lists from the GTX Combo 8K.
-
-## Compatibility
-
-### Tested
-- GTMedia GTX Combo 8K
-- GTMedia XML channel lists
-
-### Other GTMedia receivers
-
-The editor may also work with the GTX Combo 4K and other GTMedia receivers
-that export their channel lists in a compatible XML format.
-
-These models have not yet been tested, so compatibility cannot currently
-be guaranteed.
-
-If you successfully use the editor with another GTMedia receiver, feedback
-is very welcome.
-
-## Features
-
-The current version can:
-
-- Open GTMedia XML channel lists
-- Display channels by satellite
-- Filter TV and radio channels
-- Search the channel list
-- Edit channel names
-- Change channel numbers
-- Automatically reorganize channel numbers when a channel is moved
-- Remove channels
-- Save the edited channel list for import back into the receiver
-
-More features may be added as the program develops.
-
-## Beta software
-
-GTMedia Channel Editor is currently under development.
-
-Always keep a backup of your original channel list before importing an edited
-file into your receiver.
-
-The first public beta will be made available here when it has completed
-additional testing.
-
-## Feedback and bug reports
-
-Bug reports, compatibility reports and suggestions are welcome through
-GitHub Issues.
-
-When reporting compatibility with another receiver, please include the exact
-GTMedia model.
-
-## Translations
-
-Support for additional languages is planned for a future version.
-
-Translation templates will be made available here so users can contribute
-translations.
+**Tested:** GTMedia GTX Combo 8K with original firmware. The GTX Combo 4K, other GTMedia receivers, Mars firmware, and other XML formats have not been tested. Compatibility cannot be guaranteed. This project is not affiliated with or endorsed by GTMedia.
 
 ## Download
 
-The first public beta will be available through GitHub Releases when ready.
+Download the Windows ZIP from [GitHub Releases](https://github.com/leifis80/GTMedia-Channel-Editor/releases). Extract it and run `GTMediaChannelEditor_Beta.exe`. The ZIP also contains a user guide. The program's **Help → Quick guide…** menu provides short instructions.
 
-## About
+## Current features
 
-GTMedia Channel Editor is an independent project and is not affiliated with
-or endorsed by GTMedia.
+- Browse TV and radio channels, satellites, transponders and other lists.
+- Search, sort and filter channels by satellite or TV/radio type.
+- Rename a channel. Existing `xxx` prefixes are hidden in the table and retained in the saved XML.
+- Move one channel to a new position. Channels between the old and new positions shift, with separate TV and radio numbering.
+- Undo a name change or the latest move and save a separate XML copy. The original export is not overwritten.
+- See an activity indicator while the XML copy is saved.
 
-The software will be free to download and use.
+Satellite and transponder editing, channel deletion, adding entries, custom favorite lists and planned batch moves are not available in this beta.
+
+## Use and known behavior
+
+1. Export a fresh channel list from the receiver and keep a backup.
+2. Open the XML export, make a small edit and save an XML copy.
+3. Import the copy into the receiver and check the result before making extensive changes.
+
+For several moves, check the current positions before each one. An earlier move can shift the position needed for a later move. In a larger test, a channel initially placed at position 600 ended at 598 after subsequent moves. Working from higher target positions to lower ones helped in that test, but results depend on the moves. Review the final list on the receiver.
+
+The **Receiver no. (estimated)** column counts TV and radio channels without gaps; **XML order** shows the stored value. The tested receiver displayed consecutive numbers even where the export had a gap in the stored order.
+
+## Feedback
+
+Please use [Issues](https://github.com/leifis80/GTMedia-Channel-Editor/issues) for reproducible bugs, compatibility reports and suggestions. Include the exact receiver model and firmware version. Review XML exports for private information before sharing them.
+
+Additional languages may be supported in a later version. The software is free to download and use.
+
+Developed by **Leif-Inge Stenseth**.
